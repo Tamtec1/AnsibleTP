@@ -16,7 +16,7 @@
         mode: '0644'
     - ansible.builtin.copy:
         src: myapp.service
-        dest: /etc/systemd/system/myapp.service
+        dest: /etc/systemd/system/my-app.service
         owner: vagrant
         group: vagrant
         mode: '0644' 

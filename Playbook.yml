@@ -23,7 +23,7 @@
     - ansible.builtin.systemd:
         src: my-app.service
         dest: /etc/systemd/system/
-        daemon_reload: true
+        notify: reload_systemd
     - name: "On s'assure que le service soit démarré"
       service:
         name: my-app

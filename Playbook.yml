@@ -22,7 +22,7 @@
         mode: '0644' 
     - ansible.builtin.systemd:
         src: my-app.service
-        dest: /etc/systemd/system/my-app.service
+        dest: /etc/systemd/system/
         daemon_reload: true
     - name: "On s'assure que le service soit démarré"
       service:

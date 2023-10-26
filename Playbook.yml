@@ -31,7 +31,7 @@
   handlers:
     - name: reload_systemd
       systemd:
-        daemon-reload: true
+        daemon_reload: true
 
     - name: restart_service
       service:

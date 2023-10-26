@@ -1,0 +1,34 @@
+# On s'assure que les dépendances soient installées (python3-flask)
+- name: flask
+  hosts: all
+  tasks:
+    - package:
+        name: python3-flask
+    - ansible.builtin.file:
+        path: /home/vagrant/my-app
+        state: directory
+        mode: '0755'
+    - ansible.builtin.copy:
+        src: app.py
+        dest: /home/vagrant/my-app/app.py
+        owner: vagrant
+        group: vagrant
+        mode: '0644'
+   - ansible.builtin.copy:
+        src: myapp.service
+        dest: /etc/systemd/system/myapp.service
+        owner: vagrant
+        group: vagrant
+        mode: '0644' 
+    - ansible.builtin.systemd:
+        daemon_reload: true
+        
+        
+        
+        
+    
+# On s'assure que /home/vagrant/my-app est bien un dossier
+# On s'assure que le fichier app.py soit bien présent dans /home/vagrant/m-app/
+# On s'assure que le fichier my-app.service soit bien dans /etc/systemd/system/
+# On s'assure de recharger systemd
+# On s'assure que le service my-app soit démarré.
